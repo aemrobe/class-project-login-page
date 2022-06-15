@@ -1,0 +1,129 @@
+@font-face {
+  font-family: montserrat-light;
+  src: url("./font-family/static/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: montserrat-semibold;
+  src: url("./font-family/static/Montserrat-SemiBold.ttf");
+}
+
+:root {
+  --ff-montserrat-light: montserrat-light;
+  --ff-montserrat-semibold: montserrat-semibold;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input {
+  display: block;
+}
+
+body {
+  background: #2148c0;
+  font-family: var(--ff-montserrat-light);
+}
+
+.bg-bottom-left-small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page {
+  width: 80%;
+  max-width: 300px;
+}
+
+.logo {
+  width: 119px;
+  height: 97px;
+  margin: 0 auto 71px;
+}
+
+.wrapper {
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 13px 12px;
+  margin-bottom: 20px;
+}
+
+.wrapper + .wrapper {
+  margin-bottom: 43px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+input::placeholder {
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;
+}
+
+input[type="email"],
+input[type="password"] {
+  font-family: var(--ff-montserrat-light);
+  border: none;
+  background: transparent;
+  margin-left: 19px;
+}
+
+input[type="submit"] {
+  border: 1px solid white;
+  border-radius: 4px;
+  font-family: var(--ff-montserrat-semibold);
+  width: 100%;
+  color: #2148c0;
+  font-size: 16px;
+  padding: 13px 13px 12px;
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url("./images/bg\ top-right.png"),
+      url("./images/bg\ bottom-left.png");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+  }
+
+  .bg-bottom-left-small {
+    opacity: 1;
+  }
+}
+@media (max-width: 350px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    margin: 5px 0 0;
+    text-align: center;
+  }
+}
